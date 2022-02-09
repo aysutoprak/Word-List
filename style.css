@@ -1,0 +1,68 @@
+body {
+  background: rgb(83, 75, 235);
+  background: linear-gradient(
+    90deg,
+    rgb(88, 81, 235) 0%,
+    rgb(137, 137, 238) 38%,
+    rgb(152, 232, 248) 100%
+  );
+}
+
+.coolTitle {
+  text-align: center;
+  font-family: "Oswald", Helvetica, sans-serif;
+  font-size: 40px;
+  transform: skewY(-2deg);
+  letter-spacing: 4px;
+  word-spacing: -8px;
+  color: tomato;
+  text-shadow: -1px -1px 0 firebrick, -2px -2px 0 firebrick,
+    -3px -3px 0 firebrick, -4px -4px 0 firebrick, -5px -5px 0 firebrick,
+    -6px -6px 0 firebrick, -7px -7px 0 firebrick, -8px -8px 0 firebrick,
+    -30px 20px 40px dimgrey;
+}
+
+.contents {
+  display: flex;
+  justify-content: center;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.deleteClass {
+  margin: 5px;
+  border: none;
+  background: orange;
+  color: purple;
+}
+
+#enter {
+  border: none;
+  background-color: aquamarine;
+}
+
+#enter:hover {
+  background-color: rgb(81, 187, 152);
+}
+
+#saves {
+  border: none;
+  background-color: aquamarine;
+}
+
+#saves:hover {
+  background-color: rgb(81, 187, 152);
+}
+
+.deleteClass:hover {
+  background: rgb(255, 94, 0);
+  color: rgb(255, 155, 255);
+}
+
+li,
+input,
+button {
+  font-family: "Patrick Hand", cursive;
+}
