@@ -3,6 +3,9 @@ var input = document.getElementById("userinput");
 var list = document.querySelector("ul");
 var listItems = document.querySelectorAll("li");
 var loadbtn = document.getElementById("loads");
+var body = document.getElementById("gradient");
+var btn = document.getElementById("rnd");
+var savebtn = document.getElementById("saves");
 
 let prev = [];
 if (parseJSON() != null) {
@@ -101,12 +104,45 @@ function parseJSON() {
 
 function load() {
   let savedData = parseJSON();
+  let bgclr = JSON.parse(localStorage.getItem("bgcolor"));
+  body.style.background = bgcolor;
   console.log(savedData.length);
   for (let i = 0; i < savedData.length; i++) {
     createList(savedData[i]);
   }
 }
 
+var letters = "0123456789ABCDEF";
+
+function rand() {
+  return Math.floor(Math.random() * 16);
+}
+
+function generateRandom() {
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[rand()];
+  }
+  return color;
+}
+
+function setRandomButton() {
+  var co1 = generateRandom();
+  console.log(co1);
+  var co2 = generateRandom();
+  body.style.background = "linear-gradient(to right, " + co1 + ", " + co2 + ")";
+  localStorage.setItem("bgcolor", JSON.stringify(body.style.background));
+}
+
+function saveColor() {
+  let data = body.style.background;
+  navigator.clipboard.writeText(data);
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied: " + data;
+}
+
+saves.addEventListener("click", saveColor);
+btn.addEventListener("click", setRandomButton);
 button.addEventListener("click", wordAdd);
 input.addEventListener("keypress", createOnKeyPress);
 list.addEventListener("click", clicks);

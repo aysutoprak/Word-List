@@ -1,11 +1,5 @@
 body {
-  background: rgb(83, 75, 235);
-  background: linear-gradient(
-    90deg,
-    rgb(88, 81, 235) 0%,
-    rgb(137, 137, 238) 38%,
-    rgb(152, 232, 248) 100%
-  );
+  background: linear-gradient(to right, rgb(88, 81, 235), aqua);
 }
 
 .coolTitle {
@@ -38,12 +32,16 @@ body {
   color: purple;
 }
 
-#enter {
+#enter,
+#loads,
+.save {
   border: none;
   background-color: aquamarine;
 }
 
-#enter:hover {
+#enter:hover,
+#loads:hover,
+.save:hover {
   background-color: rgb(81, 187, 152);
 }
 
@@ -65,4 +63,94 @@ li,
 input,
 button {
   font-family: "Patrick Hand", cursive;
+}
+.save {
+  min-width: 130px;
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  background: #d90429;
+}
+.save:hover {
+  background-color: #ef233c;
+}
+.save:active {
+  top: 72px;
+}
+
+.bg {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  outline: none;
+  border: 1px solid #000;
+  color: #000;
+  background: transparent;
+}
+.bg:hover:after {
+  top: 0;
+  left: 0;
+}
+.bg:after {
+  content: "";
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 5px;
+  left: 5px;
+  transition: 0.2s;
+  background-color: #e95531;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
