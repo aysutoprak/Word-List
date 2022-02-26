@@ -136,6 +136,7 @@ function setRandomButton() {
 
 function saveColor() {
   let data = body.style.background;
+  data = data.slice(17, 78);
   navigator.clipboard.writeText(data);
   var tooltip = document.getElementById("myTooltip");
   tooltip.innerHTML = "Copied: " + data;
