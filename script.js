@@ -105,7 +105,7 @@ function parseJSON() {
 function load() {
   let savedData = parseJSON();
   let bgclr = JSON.parse(localStorage.getItem("bgcolor"));
-  body.style.background = bgcolor;
+  body.style.background = bgclr;
   console.log(savedData.length);
   for (let i = 0; i < savedData.length; i++) {
     createList(savedData[i]);
